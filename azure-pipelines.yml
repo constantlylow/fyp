@@ -1,12 +1,5 @@
 # HTML
-- task: SonarQubePrepare@5
-  inputs:
-    SonarQube: 'trial'
-    scannerMode: 'CLI'
-    configMode: 'manual'
-    cliProjectKey: 'Financial-literacy-program-for-kids'
-    cliProjectName: 'Financial-literacy-program-for-kids'
-    cliSources: '.'
+
 
 # Archive your static HTML project and save it with the build record.
 # Add steps that build, run tests, deploy, and more:
