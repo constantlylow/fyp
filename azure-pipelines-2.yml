@@ -25,3 +25,4 @@ steps:
     cliProjectKey: 'Financial-literacy-program-for-kids'
     cliProjectName: 'Financial-literacy-program-for-kids'
     cliSources: '.'
+- task: SonarQubeAnalyze@5
