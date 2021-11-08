@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Smiley Dress Up</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
+    <script src="js/confirmUpper.js"></script>
+    <style type="text/css">
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap%22");
+      body {
+        margin: 0;
+        background-color: white;
+      }
+      canvas {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      body {
+        margin: 0;
+        font-size: 16px;
+        font-family: "Montserrat", sans-serif;
+
+        height: 100vh;
+        display: flex;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .mascot {
+        position: absolute;
+        top: 40vh;
+        height: 35vh;
+        margin-left: 50px;
+        object-fit: contain;
+        z-index: 1;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="canvas"></div>
+    </div>
+    <img src="SLICES/2560x1440.png" alt="" class="mascot" id="mascot">
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/general.js"></script>
+      <script>
+      $(document).ready(function() {
+        const mascotImg = localStorage.getItem('mascot')
+        if (mascotImg) {
+          $("#mascot").attr('src', mascotImg)
+        }
+      })
+    </script>
+  </body>
+</html>

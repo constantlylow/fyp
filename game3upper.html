@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MEMORY CARD GAME</title>
+    <style>
+      canvas {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="game3/css/style3upper.css" />
+    <link rel="stylesheet" href="game3/css/clock.css" />
+  </head>
+  <body>
+    <section class="memory-game">
+      <div class="memory-card" data-framework="A">
+        <img
+          class="front-face"
+          src="game3/image/game3_flipcards/upperpri_question-answer/01q.png"
+          alt="Aurelia"
+        />
+        <img
+          class="back-face"
+          src="game3/image/game3_flipcards/flipcard_upper.png"
+          alt="Badge"
+        />
+      </div>
+      <div class="memory-card" data-framework="A">
+        <img
+          class="front-face"
+          src="game3/image/game3_flipcards/upperpri_question-answer/01a.png"
+          alt="Aurelia"
+        />
+        <img
+          class="back-face"
+          src="game3/image/game3_flipcards/flipcard_upper.png"
+          alt="Badge"
+        />
+      </div>
+
+      <div class="memory-card" data-framework="B">
+        <img
+          class="front-face"
+          src="game3/image/game3_flipcards/upperpri_question-answer/02q.png"
+          alt="Aurelia"
+        />
+        <img
+          class="back-face"
+          src="game3/image/game3_flipcards/flipcard_upper.png"
+          alt="Badge"
+        />
+      </div>
+      <div class="memory-card" data-framework="B">
+        <img
+          class="front-face"
+          src="game3/image/game3_flipcards/upperpri_question-answer/02a.png"
+          alt="Aurelia"
+        />
+        <img
+          class="back-face"
+          src="game3/image/game3_flipcards/flipcard_upper.png"
+          alt="Badge"
+        />
+      </div>
+
+      <div class="memory-card" data-framework="C">
+        <img
+          class="front-face"
+          src="game3/image/game3_flipcards/upperpri_question-answer/03q.png"
+          alt="Aurelia"
+        />
+        <img
+          class="back-face"
+          src="game3/image/game3_flipcards/flipcard_upper.png"
+          alt="Badge"
+        />
+      </div>
+      <div class="memory-card" data-framework="C">
+        <img
+          class="front-face"
+          src="game3/image/game3_flipcards/upperpri_question-answer/03a.png"
+          alt="Aurelia"
+        />
+        <img
+          class="back-face"
+          src="game3/image/game3_flipcards/flipcard_upper.png"
+          alt="Badge"
+        />
+      </div>
+
+      <div class="memory-card" data-framework="D">
+        <img
+          class="front-face"
+          src="game3/image/game3_flipcards/upperpri_question-answer/04q.png"
+          alt="Aurelia"
+        />
+        <img
+          class="back-face"
+          src="game3/image/game3_flipcards/flipcard_upper.png"
+          alt="Badge"
+        />
+      </div>
+      <div class="memory-card" data-framework="D">
+        <img
+          class="front-face"
+          src="game3/image/game3_flipcards/upperpri_question-answer/04a.png"
+          alt="Aurelia"
+        />
+        <img
+          class="back-face"
+          src="game3/image/game3_flipcards/flipcard_upper.png"
+          alt="Badge"
+        />
+      </div>
+
+      <div class="memory-card" data-framework="E">
+        <img
+          class="front-face"
+          src="game3/image/game3_flipcards/upperpri_question-answer/05q.png"
+          alt="Aurelia"
+        />
+        <img
+          class="back-face"
+          src="game3/image/game3_flipcards/flipcard_upper.png"
+          alt="Badge"
+        />
+      </div>
+      <div class="memory-card" data-framework="E">
+        <img
+          class="front-face"
+          src="game3/image/game3_flipcards/upperpri_question-answer/05a.png"
+          alt="Aurelia"
+        />
+        <img
+          class="back-face"
+          src="game3/image/game3_flipcards/flipcard_upper.png"
+          alt="Badge"
+        />
+      </div>
+    </section>
+
+    <div id="canvas"></div>
+    <div class="countup-wrapper" id="countup-wrapper">
+      <p id="countup" class="timer"></p>
+    </div>
+    <script>
+      let time = 80;
+      let myInterval = -1;
+
+      myInterval = setInterval(function () {
+        time--;
+        document.querySelector(".timer").innerHTML = time + " sec";
+
+        localStorage.setItem("time", time + " sec");
+
+        if (time <= 0) {
+          window.location.href = "game3ResultUpper.html";
+        } else {
+          localStorage.setItem("time", 80 - time + " sec");
+        }
+      }, 1000);
+
+      // function timing(){
+      //     if (myInterval == -1){
+      //         myInterval = setInterval(function(){
+      //             time++;
+      //             document.querySelector(".timer").innerHTML = time +' sec';
+      //         }, 1000);
+      //     }
+      //     else{
+      //         clearInterval(myInterval);
+      //         myInterval = -1;
+      //     }
+      // }
+    </script>
+    <!-- <script>
+                var time = 0;
+                var countup = setInterval(function(){
+                    time++;
+                    document.getElementById("countup").innerHTML = time;
+
+                }, 1000);
+            </script> -->
+    <!-- <p><button id = "my-button">Pause</button></p> -->
+    <!-- <input  id = 'my-button' type = 'image' src = 'image/btn_pause.png' style = "left: 2%; bottom: 390px; position: absolute;"></input> -->
+    <!-- <input  id = 'sbutton' type = 'image' src = 'image/start.png'></input> -->
+
+    <div id="canvas"></div>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/general.js"></script>
+    <script src="game2/js/phaser.js"></script>
+    <script src="game3/js/app3upper.js"></script>
+    <script src="game3/js/game3upper.js"></script>
+  </body>
+</html>

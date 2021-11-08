@@ -1,0 +1,168 @@
+#countup {
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    color: white;
+    bottom: 15px;
+    right: 30px;
+  }
+  
+  .countup-wrapper {
+    z-index: 1;
+    position: absolute;
+    opacity: 1;
+    top: 200px;
+  right: 75px;
+    text-align: center;
+    background-color: red;
+    background: url("../../SLICES/new_timer.png");
+    width: 180px;
+    height: 65px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 1300px) {
+    .countup-wrapper {
+      top: 140px;
+      width: 150px;
+      height: 60px;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .countup-wrapper {
+      top: 130px;
+      width: 120px;
+      height: 50px;
+    }
+    #countup {
+      font-size: 18px;
+      right: 15px;
+      bottom: 13px;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .countup-wrapper {
+      top: 120px;
+      right: 40px;
+      width: 110px;
+      height: 45px;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .countup-wrapper {
+      top: 110px;
+      right: 40px;
+      width: 100px;
+      height: 43px;
+    }
+    #countup {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .countup-wrapper {
+      top: 100px;
+      right: 35px;
+      width: 90px;
+      height: 40px;
+    }
+    #countup {
+      font-size: 15px;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .countup-wrapper {
+      top: 90px;
+      right: 30px;
+      width: 90px;
+      height: 40px;
+    }
+    #countup {
+      font-size: 15px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .countup-wrapper {
+      right: 20px;
+      top: 80px;
+      width: 80px;
+      height: 40px;
+    }
+    #countup {
+      font-size: 13px;
+      bottom: 15px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .countup-wrapper {
+      right: 18px;
+      top: 65px;
+      width: 80px;
+      height: 36px;
+    }
+    #countup {
+      font-size: 13px;
+      bottom: 13px;
+    }
+  }
+
+  @media screen and (max-width: 482px) {
+    .countup-wrapper {
+      right: 15px;
+      top: 50px;
+      width: 60px;
+      height: 28px;
+    }
+    #countup {
+      font-size: 10px;
+      right: 10px;
+    }
+  }
+
+  @media screen and (max-width: 392px) {
+    .countup-wrapper {
+      right: 15px;
+      top: 40px;
+      width: 60px;
+      height: 28px;
+    }
+    #countup {
+      font-size: 10px;
+    }
+  }
+  @media screen and (max-width: 322px) {
+    .countup-wrapper {
+      right: 5px;
+      top: 40px;
+      width: 50px;
+      height: 28px;
+    }
+    #countup {
+      font-size: 10px;
+      right: 5px;
+    }
+  }
+  @media screen and (max-width: 290px) {
+    .countup-wrapper {
+      right: 5px;
+      top: 40px;
+      width: 40px;
+      height: 28px;
+    }
+    #countup {
+      font-size: 8px;
+      right: 5px;
+      top: 5px;
+    }
+  }

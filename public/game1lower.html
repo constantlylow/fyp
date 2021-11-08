@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NEEDS & WANTS GAME</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/phaser.js"></script>
+    <link rel="stylesheet" href="game2/css/clock.css" />
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        margin: 0;
+        height: 100vh;
+	      display: flex;
+      }
+      canvas {
+        width: 100%;
+        height: 100%;
+      }
+      canvas2 {
+        width: 100%;
+        height: 100%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="wrapper" id="wrapper">
+      <div id="canvas"></div>
+      <div class="countup-wrapper" id="countup-wrapper">
+        <p id="countup"></p>
+      </div>
+    </div>
+    <div class="wrapper2" id="wrapper2">
+      <div id="canvas2"></div>
+      <div class="coin-wrapper" id="coin-wrapper">
+        <p id="coin"></p>
+      </div>
+    </div>
+    <script>
+      localStorage.setItem("timer", 60);
+    </script>
+    <script src="js/general.js"></script>
+    <script src="js/game1lower.js"></script>
+    <script src="js/Mute.js"></script>
+  </body>
+</html>

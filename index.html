@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="intro.css" />
+    <title>Login - POSB Financial Literacy</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/versions.js"></script>
+    <script src="js/getQueryString.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <!-- <script src="js/labs.js"></script> -->
+    <style type="text/css">
+      canvas {
+        width: 100%;
+        height: 100%;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #dropdown {
+        border-bottom: 2px solid black;
+        width: 150px;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+
+      #dropdownprimary {
+        border-bottom: 2px solid black;
+        width: 150px;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+
+      input[type="password"],
+      input[type="text"] {
+        border: none;
+        border-bottom: 2px solid black;
+        border-radius: 20px;
+        box-sizing: 0;
+        color: #696969;
+        font-weight: 400;
+        font-size: 1.2rem;
+        width: 100%;
+        padding: 0.5rem 1rem;
+      }
+
+      input[type="password"],
+      input[type="text"]:focus {
+        box-shadow: 0 0 0 0 rgba(55, 166, 155, 0.3);
+        outline: 0;
+      }
+
+      .forgot:hover {
+        color: #3b3b3b;
+      }
+
+      #lowerpri {
+        cursor: pointer;
+        width: 40%;
+        border: none;
+        background-color: transparent;
+      }
+
+      #lowerpri:active {
+        top: 3px;
+        box-shadow: inset 0px 0px 0px white, 0px 0px 0px 0px white,
+          0px 0px 0px white;
+      }
+
+      input[type="lowerpri"]:active {
+        top: 3px;
+        box-shadow: inset 0px 0px 0px #2ab7ec, 0px 0px 0px 0px #31524d,
+          0px 0px 0px #999;
+      }
+
+      #upperpri {
+        cursor: pointer;
+        width: 40%;
+        border: none;
+        background-color: transparent;
+      }
+
+      #upperpri:active {
+        top: 3px;
+        box-shadow: inset 0px 0px 0px white, 0px 0px 0px 0px white,
+          0px 0px 0px white;
+      }
+
+      #upperpri img,
+      #lowerpri img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+
+      input[type="upperpri"]:active {
+        box-shadow: inset 0px 0px 0px #2ab7ec, 0px 0px 0px 0px #31524d,
+          0px 0px 0px #999;
+      }
+
+      #errormsg {
+        color: red;
+        margin-bottom: 0px;
+        visibility: hidden;
+        font-size: 1rem;
+      }
+      #errormsg1 {
+        color: red;
+        margin-bottom: 0px;
+        visibility: hidden;
+        font-size: 1rem;
+      }
+      #errormsg2 {
+        color: red;
+        margin-bottom: 0px;
+        visibility: hidden;
+        font-size: 1rem;
+      }
+      .content {
+        position: absolute;
+        overflow: hidden;
+        background-color: white;
+        top: 500px;
+        left: 51%;
+        border-radius: 20px;
+        transform: translateX(-50%) translateY(-50%);
+        width: 50rem;
+        padding: 2rem;
+      }
+
+      .inner-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%;
+        /*overflow: scroll;*/
+      }
+
+      h1 {
+        font-family: Arial;
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin: 1rem 0;
+      }
+
+      .wrapper {
+        position: relative;
+      }
+
+      .w-100 {
+        width: 100%;
+      }
+
+      .buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .buttons-row img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+
+      @media screen and (max-width: 1400px) {
+        .content {
+          width: 45rem;
+          top: 360px;
+        }
+        h1 {
+          font-size: 1.5rem;
+        }
+      }
+
+      @media screen and (max-width: 1110px) {
+        .content {
+          width: 45rem;
+          top: 340px;
+        }
+        h1 {
+          font-size: 1.5rem;
+        }
+      }
+
+      @media screen and (max-width: 1080px) {
+        .content {
+          width: 40rem;
+          top: 280px;
+        }
+        h1 {
+          font-size: 1.4rem;
+        }
+        .inner-content {
+          height: 22rem;
+        }
+      }
+
+      @media screen and (max-width: 980px) {
+        .content {
+          width: 37rem;
+          top: 250px;
+        }
+        h1 {
+          font-size: 1.4rem;
+        }
+        .inner-content {
+          height: 20rem;
+          overflow: scroll;
+        }
+      }
+
+      @media screen and (max-width: 850px) {
+        .content {
+          width: 33rem;
+          top: 220px;
+          padding: 1rem;
+        }
+        h1 {
+          font-size: 1.3rem;
+        }
+      }
+
+      @media screen and (max-width: 750px) {
+        .content {
+          width: 30rem;
+          height: 17rem;
+          top: 200px;
+        }
+        h1,
+        input,
+        #errormsg {
+          font-size: 0.8rem !important;
+        }
+        input,
+        #dropdown {
+          padding: 0.2rem 0.5rem !important;
+        }
+      }
+
+      @media screen and (max-width: 650px) {
+        .content {
+          width: 27rem;
+          top: 180px;
+        }
+
+        .inner-content {
+          height: 15rem;
+        }
+      }
+
+      @media screen and (max-width: 550px) {
+        .content {
+          width: 25rem;
+          height: 11rem;
+          top: 150px;
+        }
+        h1 {
+          margin: 0;
+          margin-top: 0.5rem;
+        }
+      }
+
+      @media screen and (max-width: 450px) {
+        .content {
+          width: 25rem;
+          height: 10rem;
+          top: 120px;
+          overflow: scroll;
+        }
+      }
+
+      @media screen and (max-width: 350px) {
+        .content {
+          width: 18rem;
+          height: 10rem;
+          top: 90px;
+          overflow: scroll;
+        }
+      }
+
+      /* IN PORTRAIT MODE*/
+      @media screen and (max-width: 300px) {
+        .content {
+          width: 16rem;
+          height: 9rem;
+          top: 80px;
+          overflow: scroll;
+        }
+      }
+
+      @media screen and (orientation: landscape) {
+        .example {
+          display: none;
+        }
+      }
+
+      div.example {
+        background-color: Grey;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
+        <div class="inner-content">
+          <div class="example">Rotate your device to landscape Mode!</div>
+          <div class="d-flex flex-column w-100">
+            <h1>Pick a Name:</h1>
+            <p id="errormsg1">Please select a name</p>
+            <select id="dropdown">
+              <option value="" style="display: none" selected disabled>
+                Choose Nickname
+              </option>
+              <option value="Save Smart Team">Save Smart Team</option>
+              <option value="Spend Smart Team">Spend Smart Team</option>
+
+            </select>
+          </div>
+
+          <div class="d-flex flex-column w-100">
+            <h1>Select Your Level:</h1>
+            <p id="errormsg2">Please select a level</p>
+            <select id="dropdownprimary">
+              <option value="" style="display: none" selected disabled>
+                Choose level
+              </option>
+              <option value="P1">P1</option>
+              <option value="P2">P2</option>
+              <option value="P3">P3</option>
+              <option value="P4">P4</option>
+              <option value="P5">P5</option>
+              <option value="P6">P6</option>
+            </select>
+          </div>
+
+          <div class="d-flex flex-column w-100">
+            <h1>Enter Your Primary School Name:</h1>
+            <input
+              type="text"
+              placeholder="Type your School Name"
+              id="username"
+            />
+            <p id="errormsg">Please enter a School Name</p>
+          </div>
+          <div class="d-flex flex-column">
+            <h1>Select Game Mode:</h1>
+            <div class="buttons-row">
+              <button id="lowerpri">
+                <img src="SLICES/bttn_lowerpri.png" />
+              </button>
+              <button id="upperpri">
+                <img src="SLICES/bttn_upperpri.png" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="canvas"></div>
+    </div>
+    <script src="js/general.js"></script>
+    <script src="js/phaser.js"></script>
+    <script src="js/gamename.js"></script>
+    <script src="js/Mute.js"></script>
+    <script>
+      document.getElementById("lowerpri").addEventListener("click", lowerPri);
+      document.getElementById("upperpri").addEventListener("click", upperPri);
+
+      function lowerPri() {
+        var level = document.getElementById("dropdownprimary").value;
+        var Username = document.getElementById("dropdown").value;
+        var inputSchname = document.getElementById("username").value;
+
+        if ((Username == "")) {
+          document.getElementById("errormsg1").style.visibility = "visible";
+          return false;
+        }
+        if ((level == "")) {
+          document.getElementById("errormsg2").style.visibility = "visible";
+          return false;
+        }
+        if ((inputSchname == "")) {
+          document.getElementById("errormsg").style.visibility = "visible";
+          return false;
+        } else {
+          //  Turn off the click events
+          var i = 0;
+          var a = 0;
+          var b = 0;
+          sessionStorage.setItem(b, level);
+          sessionStorage.setItem(a, inputSchname);
+          sessionStorage.setItem(i, Username);
+          let playername1 = sessionStorage.getItem(i);
+          window.location.href = "choosegame.html";
+        }
+      }
+
+      function upperPri() {
+        var level = document.getElementById("dropdownprimary").value;
+        var Username = document.getElementById("dropdown").value;
+        var inputSchname = document.getElementById("username").value;
+
+        if ((Username == "")) {
+          document.getElementById("errormsg1").style.visibility = "visible";
+          return false;
+        }
+        if ((level == "")) {
+          document.getElementById("errormsg2").style.visibility = "visible";
+          return false;
+        }
+        if ((inputSchname == "")) {
+          document.getElementById("errormsg").style.visibility = "visible";
+          return false;
+        } else {
+          //  Turn off the click events
+          var i = 0;
+          var a = 0;
+          var b = 0;
+          sessionStorage.setItem(b, level);
+          sessionStorage.setItem(a, inputSchname);
+          sessionStorage.setItem(i, Username);
+          let playername1 = sessionStorage.getItem(i);
+          window.location.href = "choosegame_upper.html";
+        }
+      }
+
+      function isPortrait() {
+        return window.innerHeight > window.innerWidth;
+      }
+
+      function POSTOperation() {
+        let entry = {
+          username: username.value,
+          prisch: prisch.value,
+          date: dateObject.toLocaleDateString(),
+          timestamp: dateObject.toLocaleTimeString(),
+        };
+
+        fetch(endpoint, {
+          method: "POST",
+          body: JSON.stringify(entry),
+          headers: new Headers({
+            "content-type": "application/json",
+          }),
+        })
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            if (data === "success") {
+              console.log(`Response: ${data}`);
+            } else {
+              alert("Oops, there are some issues. check the DynamoDB");
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+            alert("Request Failed");
+          });
+      }
+    </script>
+  </body>
+</html>

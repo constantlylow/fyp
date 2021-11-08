@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Screenshot</title>
+  </head>
+  <body>
+    <style>
+      #printpage {
+        position: initial;
+        right: 100px;
+        top: 200px;
+        font-size: 20px;
+        border: 2px solid yellow;
+        border-radius: 12px;
+        background-color: yellow;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        float: right;
+        margin-right: 20px;
+        margin-left: 10px;
+        margin-bottom: 20px;
+      }
+
+      #crossbtn{
+        position: initial;
+        right: 20px;
+        top: 100px;
+        float: right;
+
+      }
+
+      @media print {
+        body * {
+          visibility: visible;
+        }
+        #printpage {
+          display: none;
+        }
+        #crossbtn {
+          display: none;
+        }
+      }
+
+      .wrapper {
+        position: relative;
+      }
+
+      .box {
+        width: 800px;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .mascot {
+        position: absolute;
+        top: 380px;
+        left: 285px;
+        width: 230px;
+        height: 230px;
+        object-fit: contain;
+        z-index: 1;
+      }
+      
+    </style>
+    </style>
+    <div>
+
+    </div>
+    <div class="wrapper">
+      <img id = "picture" src="SLICES/CoinboxTemplateNew.png" class="box">
+        <img src="SLICES/2560x1440.png" alt="" class="mascot" id="mascot">
+    </div>
+    <img src="SLICES/confirm.png" alt="" id="printpage" onclick="window.print();" width="120px">
+    <a href="end.html">
+      <img id ="crossbtn" src="SLICES/btn_close.png" width="50px">
+    </a>
+    <br>
+    <p>Powered by SQKII</p>
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/phaser.js"></script>
+    <script src="js/general.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        const mascotImg = localStorage.getItem('mascot')
+        if (mascotImg) {
+          $("#mascot").attr('src', mascotImg)
+        }
+      })
+    </script>
+  </body>
+</html>

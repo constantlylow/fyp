@@ -1,0 +1,11 @@
+{
+    "document": {
+      "player": {
+        "username": "Player1",
+        "level" : "P1",
+        "prisch": "ABC Primary School",
+        "date": "7 July 2021",
+        "timestamp": "3:06pm"
+      }
+    }
+  }
